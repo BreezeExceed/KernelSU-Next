@@ -16,6 +16,15 @@
 #include <linux/time.h>
 #include <linux/wait.h>
 
+#ifndef __NOLIBC_KERNEL_TIMESPEC_DEFINED
+#define __NOLIBC_KERNEL_TIMESPEC_DEFINED
+
+struct __kernel_timespec {
+        long long tv_sec;
+        long long tv_nsec;
+};
+
+#endif
 
 /* Only the generic macros and types may be defined here. The arch-specific
  * ones such as the O_RDONLY and related macros used by fcntl() and open()
